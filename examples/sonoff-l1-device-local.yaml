@@ -1,0 +1,76 @@
+substitutions:
+  device_name: sonoff-l1-device        # Change this to a unique device name (lowercase, no spaces)
+  friendly_name: "Sonoff L1 Device"    # Change this to any friendly display name
+
+esphome:
+  name: ${device_name}
+  friendly_name: ${friendly_name}
+
+esp8266:
+  board: esp8285
+
+# Local install option:
+# Copy this repo's components/sonoff_l1 folder into:
+#   /config/esphome/components/sonoff_l1
+# Then keep this external_components block pointing to ./components
+external_components:
+  - source:
+      type: local
+      path: ./components
+    components: [sonoff_l1]
+
+logger:
+  baud_rate: 0
+
+api:
+  encryption:
+    key: "YOURPASSWORDHERE"  # Change this. In ESPHome add-on, you can generate an encryption key.
+
+ota:
+  platform: esphome
+  password: "YOURPASSWORDHERE"  # Change this to your OTA password.
+
+wifi:
+  networks:
+    - ssid: "YOURSSIDHERE"          # Change this to your Wi-Fi SSID
+      password: "YOURPASSWORDHERE"  # Change this to your Wi-Fi password
+
+  ap:
+    ssid: "${friendly_name} Fallback Hotspot"
+    password: "YOURPASSWORDHERE"  # Change this to your fallback AP password
+
+captive_portal:
+
+light:
+  - platform: sonoff_l1
+    id: l1
+    name: "${friendly_name}"
+    effects:
+      - lambda:
+          name: Colorful Gradient (Smooth)
+          lambda: |-
+            id(l1).setModeGradient();
+      - lambda:
+          name: Colorful Breath (Fade)
+          lambda: |-
+            id(l1).setModeBreath();
+      - lambda:
+          name: RGB Gradient
+          lambda: |-
+            id(l1).setModeRGBGradient();
+      - lambda:
+          name: RGB Pulse (Strobe)
+          lambda: |-
+            id(l1).setModeRGBPulse();
+      - lambda:
+          name: RGB Breath
+          lambda: |-
+            id(l1).setModeRGBBreath();
+      - lambda:
+          name: RGB Strobe (Flash)
+          lambda: |-
+            id(l1).setModeRGBStrobe();
+      - lambda:
+          name: Sound Reactive
+          lambda: |-
+            id(l1).setModeSync();
