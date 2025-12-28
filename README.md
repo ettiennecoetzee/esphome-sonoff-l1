@@ -4,7 +4,7 @@ This repository provides an **ESPHome external component** that adds a `light:` 
 
 It uses the Sonoff L1 AT-command interface over the ESP's hardware `Serial` at **19200 baud**.
 
-ESPHome external component syntax and defaults are documented here. citeturn19search3
+ESPHome external component syntax and defaults are documented here.
 
 ## Install
 
@@ -16,7 +16,7 @@ external_components:
     components: [sonoff_l1]
 ```
 
-ESPHome expects components in `components/` by default. citeturn19search3
+ESPHome expects components in `components/` by default.
 
 ### Option B, copy it locally
 
@@ -43,11 +43,11 @@ logger:
   baud_rate: 0
 ```
 
-ESPHome documents that `baud_rate: 0` disables UART logging. citeturn20search0
+ESPHome documents that `baud_rate: 0` disables UART logging.
 
 ## “Effects: None” behavior
 
-ESPHome reports `LightState::get_effect_name()` as `"None"` when no effect is active. citeturn21search0  
+ESPHome reports `LightState::get_effect_name()` as `"None"` when no effect is active.
 This component detects that case and resets the Sonoff L1 mode back to static color mode while keeping your current color and brightness.
 
 ## Examples
