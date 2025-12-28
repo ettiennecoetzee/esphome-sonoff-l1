@@ -10,7 +10,7 @@ esp8266:
   board: esp8285
 
 external_components:
-  - source: github://ettiennecoetzee/esphome-sonoff-l1@main
+  - source: github://ettiennecoetzee/esphome-sonoff-l1@v1.0.0
     components: [sonoff_l1]
 
 logger:

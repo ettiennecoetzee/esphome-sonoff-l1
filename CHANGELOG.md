@@ -1,13 +1,11 @@
 # Changelog
 
-## v1.1.0
-- README expanded: Home Assistant and flashing instructions.
-- Examples updated:
-  - GitHub example uses github://ettiennecoetzee/esphome-sonoff-l1
-  - Local example included for users who prefer local components
-- Safety improvement: effect name handling avoids null pointer issues.
-
 ## v1.0.0
-- Initial public release.
-- ESPHome external component `sonoff_l1` light platform.
-- Fix: selecting “Effects: None” resets the controller back to static mode.
+- Initial public release of the ESPHome external component `sonoff_l1`.
+- Adds a `light:` platform for Sonoff L1 controllers (ESP8285/ESP8266 family).
+- Provides lambda-friendly effect helpers (gradient, breath, RGB patterns, sync-to-music).
+- Fix: selecting “Effects: None” returns the controller to static mode while keeping current color and brightness.
+- Includes two examples:
+  - GitHub install example (pinned to `v1.0.0`)
+  - Local install example
+- README includes Home Assistant oriented flashing and setup guidance.
