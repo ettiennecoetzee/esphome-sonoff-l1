@@ -12,7 +12,7 @@ ESPHome external component syntax and defaults are documented here.
 
 ```yaml
 external_components:
-  - source: github://YOUR_GITHUB_USER/esphome-sonoff-l1@main
+  - source: github://ettiennecoetzee/esphome-sonoff-l1@main
     components: [sonoff_l1]
 ```
 
