@@ -1,2 +1,5 @@
 # Sonoff L1 external component for ESPHome
-# Keep this file for ESPHome's component loader. It can stay empty.
+# This component provides a custom light platform: `platform: sonoff_l1`
+
+IS_PLATFORM_COMPONENT = True
+CODEOWNERS = ["@ettiennecoetzee"]
